@@ -10,7 +10,7 @@ public class DriverCreation extends Helper {
 
     @Given("I am using the browser Chrome")
     public void i_am_using_the_browser_Chrome() {
-        //logger.info("Start driver initialization");
+
         System.setProperty("webdriver.chrome.driver", MAC_DRIVER_PATH);
 
         ChromeOptions options = new ChromeOptions();
@@ -19,9 +19,8 @@ public class DriverCreation extends Helper {
         options.addArguments("test-type");
         options.addArguments("start-maximized");
 
+        logger.info("Testing");
         driver = new ChromeDriver(options);
-
-        //logger.info("Driver was created succesfuly");
     }
 
     @And("I close the browser Chrome")
