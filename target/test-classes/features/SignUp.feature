@@ -3,9 +3,11 @@ Feature: SignUp on the Accenture web site
 
   Scenario Outline: SignUp on the Accenture web site
 
-    Given I have url "<url>" which I would like to test
-    And I type the username "<username>", password "<password>" on the page to login
+    Given I am using the browser Chrome
+    #And I go to the main "<Web Page>"
+    #Then I generate fake details and make a Sign up using "<Email>", password "<Password>"
+    And I close the browser Chrome
 
     Examples:
-      | url                | username   | password     |
-      | https://kalif24.ru | walenberg6 | hVl7l1vx47CL |
+      | Web Page           | Email          | Password     |
+      | https://kalif24.ru | walenbeg@ya.ru | hVl7l1vx47CL |
