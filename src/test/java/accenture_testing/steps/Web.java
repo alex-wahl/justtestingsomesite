@@ -6,6 +6,8 @@ import accenture_testing.pages.SignInPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
+import java.io.IOException;
+
 public class Web extends Helper {
 
     @Given("I go to the main {string}")
@@ -21,7 +23,7 @@ public class Web extends Helper {
     }
 
     @Then("I generate fake details and make a Sign up using {string}, password {string}")
-    public void i_generate_fake_details_and_make_a_Sign_up_using_password(String email, String password) {
+    public void i_generate_fake_details_and_make_a_Sign_up_using_password(String email, String password) throws IOException {
         HomePage home = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         SignInPage signInPage = new SignInPage(driver);
@@ -113,6 +115,10 @@ public class Web extends Helper {
         registerPage.typeWhatIamRealygood();
 
         registerPage.clickOnCareersBlog();
+
+        registerPage.scrollDown("0", "500");
+
+        registerPage.makeAscreenShot();
 
         try {
             Thread.sleep(5000);

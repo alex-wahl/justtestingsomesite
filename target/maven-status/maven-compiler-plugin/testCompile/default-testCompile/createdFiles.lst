@@ -1,6 +1,7 @@
 accenture_testing/steps/DriverCreation.class
 accenture_testing/pages/HomePage.class
 accenture_testing/steps/Helper.class
+accenture_testing/backend/Request.class
 accenture_testing/pages/RegisterPage.class
 accenture_testing/pages/SignInPage.class
 accenture_testing/RunCucumberTest.class

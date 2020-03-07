@@ -1,13 +1,18 @@
 package accenture_testing.pages;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
+import javax.naming.ldap.SortResponseControl;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
 public class RegisterPage {
@@ -92,7 +97,6 @@ public class RegisterPage {
     By careersBlog = By.name("chkSubscribeToCareerBlog");
 
     //By captha
-    By capthaPicture = By.className("LBD_CaptchaImage");
     By captha = By.className("captchaInput");
 
     // By coockies
@@ -120,7 +124,6 @@ public class RegisterPage {
     public void scrollDown(String horizontal, String vertical) {
         String parameters = "(" + horizontal + "," + vertical + ")";
         String script = "window.scrollBy" + parameters;
-        logger.info(script);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(script, "");
     }
@@ -299,6 +302,14 @@ public class RegisterPage {
 
     }
 
+    public void makeAscreenShot() throws IOException {
+
+        TakesScreenshot scrShot =((TakesScreenshot) driver);
+        File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
+        File destination = new File("/Users/wahl/Desktop/testing/justtestingsomesite/newfile.jpg");
+        FileUtils.copyFile(srcFile, destination);
+
+    }
 
 
 }
