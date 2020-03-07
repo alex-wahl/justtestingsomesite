@@ -93,42 +93,61 @@ public class Web extends Helper {
         logger.info("Select a state in the dropdown menu");
         registerPage.selectState();
 
+        logger.info("Type a city");
         registerPage.typeCity();
 
+        logger.info("Type a phone number");
         registerPage.typePhoneNumber();
 
+        logger.info("Scroll down");
         registerPage.scrollDown("0", "500");
 
+        logger.info("Click on Job locations");
         registerPage.clickOnJobLocation();
 
+        logger.info("Select Job region");
         registerPage.selectJobRegion();
 
+        logger.info("Click on Years of experience");
         registerPage.clickOnYearsOfExperience();
 
+        logger.info("Select Years of experience");
         registerPage.selectYearsOfExperience();
 
+        logger.info("Click on job city");
         registerPage.clickOnJobCity();
 
+        logger.info("Select job city");
         registerPage.selectJobCity();
 
+        logger.info("Click on Primary functions");
         registerPage.clickOnPrimaryFunctions();
 
+        logger.info("Select Primary functions");
         registerPage.selectPrimaryFunctions();
 
+        logger.info("Scroll down");
         registerPage.scrollDown("0", "100");
 
+        logger.info("Click on Industry");
         registerPage.clickOnIndustry();
 
+        logger.info("Select Industry");
         registerPage.selectIndustryType();
 
+        logger.info("Type what I can do good, there are not so big choose");
         registerPage.typeWhatIamRealygood();
 
+        logger.info("Click on Careerblog");
         registerPage.clickOnCareersBlog();
 
+        logger.info("Scroll down");
         registerPage.scrollDown("0", "500");
 
+        logger.info("Scroll screen");
         registerPage.makeAscreenShot();
 
+        logger.info("Make crop");
         registerPage.makeCrop();
 
         try {

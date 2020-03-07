@@ -302,22 +302,19 @@ public class RegisterPage {
     }
 
     public void makeAscreenShot() throws IOException {
-        logger.info("Making screenshot");
+
         TakesScreenshot scrShot = ((TakesScreenshot) driver);
         File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
         File destination = new File(path);
         FileUtils.copyFile(srcFile, destination);
+
     }
 
     public void makeCrop() throws IOException {
 
-        logger.info("Making crop");
         File imageFile = new File(path);
         String cropped = "/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png";
-
         BufferedImage bufferedImage = ImageIO.read(imageFile);
-        logger.info(bufferedImage.getWidth());
-        logger.info(bufferedImage.getHeight());
         BufferedImage croppedScreen = Crop.cropImage(bufferedImage, 750, 1165, 700, 160);
         ImageIO.write(croppedScreen, "png", new File(cropped));
 
