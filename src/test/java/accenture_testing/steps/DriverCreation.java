@@ -26,6 +26,7 @@ public class DriverCreation extends Helper {
 
     @And("I close the browser Chrome")
     public void i_close_the_browser_Chrome() {
+
         logger.info("############ Closing a browser Chrome ############");
         driver.close();
     }
