@@ -1,9 +1,12 @@
 package accenture_testing.pages;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.lang.invoke.MethodHandles;
 
@@ -34,6 +37,7 @@ public class RegisterPage {
     By country = By.xpath("//*[@id=\"Form-bc069210-38f8-42e1-9882-b84c350f3613\"]/section[1]/div[4]/div[1]/div/div/div[1]/button[1]/span");
     By region = By.xpath("//*[@id=\"ddBoxRegistrationCountryRegion-ulid\"]/li[83]/a");
 
+
     //By state
     By state = By.xpath("//*[@id=\"Form-bc069210-38f8-42e1-9882-b84c350f3613\"]/section[1]/div[4]/div[2]/div/div/div[1]");
     By province = By.xpath("//*[@id=\"ddBoxRegistrationStateProvince-ulid\"]/li[4]/a/span");
@@ -60,7 +64,7 @@ public class RegisterPage {
 
     //By jobCity
     By jobCity = By.xpath("//*[@id=\"RegCitiesLink\"]");
-    By jobLand = By.xpath("//*[@id=\"selectCity\"]/div/div[4]/label/input");
+    By jobLand = By.name("DE-BY - München");
     By jobLandUpdateButton = By.xpath("//*[@id=\"btnCityUpdate\"]");
 
     //By jobFunction
@@ -96,14 +100,24 @@ public class RegisterPage {
 
     //Methods Section
 
+    //for letters
+    public String generateRandomString(int length) {
+        return RandomStringUtils.randomAlphabetic(length);
+    }
+
+    //for numbers
+    public String generateRandomNumber(int length) {
+        return RandomStringUtils.randomNumeric(length);
+    }
+
     /**
      * This method will scroll a windows browser, gets string parameters in pixel
      *
      * @param horizontal, it gets pixels value to scroll horizontal
-     * @param vertical,  it gets pixels value to scroll vertical
+     * @param vertical,   it gets pixels value to scroll vertical
      */
-    public void scrollDown(String horizontal, String vertical){
-        String parameters = "(" + horizontal + ","+ vertical + ")";
+    public void scrollDown(String horizontal, String vertical) {
+        String parameters = "(" + horizontal + "," + vertical + ")";
         String script = "window.scrollBy" + parameters;
         logger.info(script);
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -122,6 +136,104 @@ public class RegisterPage {
 
     }
 
+    public void acceptCoockies() {
+        driver.findElement(coockies).click();
+    }
+
+    public void againTypePassword(String password) {
+
+        driver.findElement(reTypePassword).sendKeys(password);
+
+    }
+
+    public void fillOutFirstName() {
+
+        driver.findElement(firstName).sendKeys(generateRandomString(5));
+    }
+
+    public void fillOutLastName() {
+
+        driver.findElement(lastName).sendKeys(generateRandomString(5));
+
+    }
+
+    public void clickOnCountry() {
+
+        driver.findElement(country).click();
+
+    }
+
+    public void selectCountry() {
+
+        driver.findElement(region).click();
+
+    }
+
+    public void clickOnState() {
+
+        driver.findElement(state).click();
+
+    }
+
+    public void selectState() {
+
+        driver.findElement(province).click();
+
+    }
+
+    public void typeCity() {
+
+        driver.findElement(city).sendKeys(generateRandomString(6));
+
+    }
+
+    public void typePhoneNumber() {
+
+        driver.findElement(phoneNumber).sendKeys(generateRandomNumber(8));
+
+    }
+
+    public void clickOnJobLocation() {
+
+        driver.findElement(jobLocation).click();
+
+    }
+
+    public void selectJobRegion() {
+
+        driver.findElement(jobRegion).click();
+
+    }
+
+    public void clickOnYearsOfExperience() {
+
+        driver.findElement(yearsOfExperience).click();
+
+    }
+
+    public void selectYearsOfExperience() {
+
+        driver.findElement(years).click();
+
+    }
+
+    public void clickOnJobCity() {
+
+        driver.findElement(jobCity).click();
+
+    }
+
+    public void selectJobCity() {
+
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //
+        }
+        driver.findElement(jobLand).click();
+        driver.findElement(jobLandUpdateButton).click();
+
+    }
 
 
 }
