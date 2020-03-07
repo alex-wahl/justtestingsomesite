@@ -69,12 +69,12 @@ public class RegisterPage {
 
     //By jobFunction
     By jobFunction = By.xpath("//*[@id=\"RegPrimaryJob\"]");
-    By jobBranch = By.xpath("//*[@id=\"selectPrimaryJob\"]/div[3]/div[7]/label/input");
+    By jobBranch = By.name("Software Engineering");
     By jobBranchUpdateButton = By.xpath("//*[@id=\"btnPrimaryJobUpdateReg\"]");
 
     //By industry
     By industry = By.xpath("//*[@id=\"RegIndustryLink\"]");
-    By industryType = By.xpath("//*[@id=\"selectIndustry\"]/div[1]/div[4]/label");
+    By industryType = By.name("Banking");
     By industryTypeUpdateButton = By.xpath("//*[@id=\"btnIndustryUpdate\"]");
 
     //By travel
@@ -83,12 +83,13 @@ public class RegisterPage {
 
     //By skills
     By skills = By.xpath("//*[@id=\"skillsSpecialization\"]");
+    By skillsButton = By.xpath("//*[@id=\"Form-bc069210-38f8-42e1-9882-b84c350f3613\"]/section[2]/div[2]/div[2]/div[2]/div[3]/div[1]/span");
 
     //By talentConnection
-    By talentConnection = By.xpath("//*[@id=\"chkJoinTalentConnection\"]");
+    By talentConnection = By.name("chkJoinTalentConnection");
 
     //By careersBlog
-    By careersBlog = By.xpath("//*[@id=\"chkSubscribeToCareerBlog\"]");
+    By careersBlog = By.name("chkSubscribeToCareerBlog");
 
     //By captha
     By capthaPicture = By.className("LBD_CaptchaImage");
@@ -234,6 +235,70 @@ public class RegisterPage {
         driver.findElement(jobLandUpdateButton).click();
 
     }
+
+    public void clickOnPrimaryFunctions() {
+
+        driver.findElement(jobFunction).click();
+
+    }
+
+    public void selectPrimaryFunctions() {
+
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //
+        }
+        driver.findElement(jobBranch).click();
+        driver.findElement(jobBranchUpdateButton).click();
+
+    }
+
+    public void clickOnIndustry() {
+
+        driver.findElement(industry).click();
+
+    }
+
+    public void selectIndustryType() {
+
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //
+        }
+        driver.findElement(industryType).click();
+        driver.findElement(industryTypeUpdateButton).click();
+
+    }
+
+    public void typeWhatIamRealygood() {
+
+        driver.findElement(skills).sendKeys("Quality Assurance");
+        driver.findElement(skillsButton).click();
+        try {
+            Thread.sleep(500);
+        } catch (Exception e) {
+            //
+        }
+        driver.findElement(skills).sendKeys("Automated Testing");
+        driver.findElement(skillsButton).click();
+        try {
+            Thread.sleep(500);
+        } catch (Exception e) {
+            //
+        }
+        driver.findElement(skills).sendKeys("Test Automation Framework");
+        driver.findElement(skillsButton).click();
+
+    }
+
+    public void clickOnCareersBlog() {
+
+        driver.findElement(careersBlog).click();
+
+    }
+
 
 
 }

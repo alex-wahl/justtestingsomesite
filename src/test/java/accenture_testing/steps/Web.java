@@ -36,7 +36,7 @@ public class Web extends Helper {
         signInPage.clickOnSignUp();
 
         logger.info("Scroll Down");
-        registerPage.scrollDown("0","400");
+        registerPage.scrollDown("0", "400");
 
         try {
             Thread.sleep(1000);
@@ -54,7 +54,7 @@ public class Web extends Helper {
         registerPage.againTypePassword(password);
 
         logger.info("Scroll Down");
-        registerPage.scrollDown("0","200");
+        registerPage.scrollDown("0", "200");
 
         logger.info("Type First Name");
         registerPage.fillOutFirstName();
@@ -62,7 +62,7 @@ public class Web extends Helper {
         logger.info("Type Last Name");
         registerPage.fillOutLastName();
 
-        registerPage.scrollDown("0","500");
+        registerPage.scrollDown("0", "500");
 
         try {
             Thread.sleep(2000);
@@ -86,7 +86,7 @@ public class Web extends Helper {
 
         registerPage.typePhoneNumber();
 
-        registerPage.scrollDown("0","500");
+        registerPage.scrollDown("0", "500");
 
         registerPage.clickOnJobLocation();
 
@@ -99,6 +99,20 @@ public class Web extends Helper {
         registerPage.clickOnJobCity();
 
         registerPage.selectJobCity();
+
+        registerPage.clickOnPrimaryFunctions();
+
+        registerPage.selectPrimaryFunctions();
+
+        registerPage.scrollDown("0", "100");
+
+        registerPage.clickOnIndustry();
+
+        registerPage.selectIndustryType();
+
+        registerPage.typeWhatIamRealygood();
+
+        registerPage.clickOnCareersBlog();
 
         try {
             Thread.sleep(5000);
