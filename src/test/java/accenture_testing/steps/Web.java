@@ -6,6 +6,9 @@ import accenture_testing.pages.SignInPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class Web extends Helper {
@@ -41,7 +44,7 @@ public class Web extends Helper {
         registerPage.scrollDown("0", "400");
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             //
         }
@@ -56,7 +59,13 @@ public class Web extends Helper {
         registerPage.againTypePassword(password);
 
         logger.info("Scroll Down");
-        registerPage.scrollDown("0", "200");
+        registerPage.scrollDown("0", "300");
+
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //
+        }
 
         logger.info("Type First Name");
         registerPage.fillOutFirstName();
@@ -120,6 +129,8 @@ public class Web extends Helper {
 
         registerPage.makeAscreenShot();
 
+        registerPage.makeCrop();
+
         try {
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -127,6 +138,5 @@ public class Web extends Helper {
         }
 
     }
-
 
 }

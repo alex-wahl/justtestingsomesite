@@ -1,21 +1,20 @@
 package accenture_testing.pages;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.support.ui.Select;
+import accenture_testing.utilities.Crop;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-import javax.naming.ldap.SortResponseControl;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
 public class RegisterPage {
+
+    public static String path = "/Users/wahl/Desktop/testing/justtestingsomesite/newfile.jpg";
 
     WebDriver driver;
 
@@ -303,13 +302,25 @@ public class RegisterPage {
     }
 
     public void makeAscreenShot() throws IOException {
-
-        TakesScreenshot scrShot =((TakesScreenshot) driver);
+        logger.info("Making screenshot");
+        TakesScreenshot scrShot = ((TakesScreenshot) driver);
         File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-        File destination = new File("/Users/wahl/Desktop/testing/justtestingsomesite/newfile.jpg");
+        File destination = new File(path);
         FileUtils.copyFile(srcFile, destination);
-
     }
 
+    public void makeCrop() throws IOException {
+
+        logger.info("Making crop");
+        File imageFile = new File(path);
+        String cropped = "/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png";
+
+        BufferedImage bufferedImage = ImageIO.read(imageFile);
+        logger.info(bufferedImage.getWidth());
+        logger.info(bufferedImage.getHeight());
+        BufferedImage croppedScreen = Crop.cropImage(bufferedImage, 750, 1165, 700, 160);
+        ImageIO.write(croppedScreen, "png", new File(cropped));
+
+    }
 
 }
