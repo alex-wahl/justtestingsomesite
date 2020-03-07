@@ -17,10 +17,5 @@ public class Web extends Helper {
         throw new cucumber.api.PendingException();
     }
 
-    @Given("test")
-    public void test() {
-        logger.info("#################################");
-    }
-
 
 }

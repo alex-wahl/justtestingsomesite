@@ -19,13 +19,14 @@ public class DriverCreation extends Helper {
         options.addArguments("test-type");
         options.addArguments("start-maximized");
 
-        logger.info("Test");
+        logger.info("############ Opening a browser Chrome ############");
         driver = new ChromeDriver(options);
     }
 
 
     @And("I close the browser Chrome")
     public void i_close_the_browser_Chrome() {
+        logger.info("############ Closing a browser Chrome ############");
         driver.close();
     }
 
