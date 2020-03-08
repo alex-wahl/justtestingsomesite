@@ -40,13 +40,14 @@ public class Request extends Helper {
 
         Cookies = response.getCookies();
 
-        logger.info("Status request is: " + response.asString());
+        logger.info("Status sendCaptcha is: " + response.asString());
 
         return response;
     }
 
     public static Response statusCaptcha(String captchaID) {
 
+        logger.info("captchaID " + captchaID);
         Response response = given()
                 .get("http://api.dbcapi.me/api/captcha/" + captchaID);
 

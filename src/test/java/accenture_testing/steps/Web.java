@@ -10,8 +10,7 @@ import cucumber.api.java.en.Then;
 
 import java.io.IOException;
 
-import static accenture_testing.backend.CaptchaHandle.captchaID;
-import static accenture_testing.backend.CaptchaHandle.captchavalue;
+import static accenture_testing.backend.CaptchaHandle.*;
 
 public class Web extends Helper {
 
@@ -155,30 +154,30 @@ public class Web extends Helper {
         logger.info("Send backend request");
         String responseCaptcha = Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png").asString();
 
-        logger.info("Captcha handling");
-        CaptchaHandle.getCaptcha(responseCaptcha);
-
         try {
-            Thread.sleep(8000);
+            Thread.sleep(10000);
         } catch (Exception e) {
             //
         }
 
-        logger.info("Captcha status is: " + Request.statusCaptcha(captchaID));
+        logger.info("Captcha handling");
+        CaptchaHandle.getCaptcha(responseCaptcha);
 
-        logger.info(captchavalue);
+        logger.info("Checking status");
+        String status = Request.statusCaptcha(id).asString();
+        //CaptchaHandle getnew = new CaptchaHandle();
+        //getnew.getCaptcha(status);
+        CaptchaHandle.getCaptcha(status);
+
+
+        logger.info("Captcha ID == " +  id);
+        logger.info("Captcha value == " +  captchavalue);
 
         logger.info("Type captcha");
         registerPage.typeCaptcha();
 
         logger.info("Make register");
         registerPage.clickOnRegister();
-
-        try {
-            Thread.sleep(10000);
-        } catch (Exception e) {
-            //
-        }
 
     }
 

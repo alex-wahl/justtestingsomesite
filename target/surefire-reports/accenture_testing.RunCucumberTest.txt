@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: accenture_testing.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 51.645 sec <<< FAILURE!
-SignUp on the Accenture web site(SignUp on the Accenture web site)  Time elapsed: 51.044 sec  <<< ERROR!
-org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=80.0.3987.132)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Alexanders-MBP.home', ip: 'fe80:0:0:0:1c07:9230:4832:55b3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.132, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/89/5trqvlnd3ng...}, goog:chromeOptions: {debuggerAddress: localhost:58530}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e53ee26f9cc8ad5b5b7229f45531b8b4
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at accenture_testing.pages.RegisterPage.typePassword(RegisterPage.java:144)
-	at accenture_testing.steps.Web.i_generate_fake_details_and_make_a_Sign_up_using_password(Web.java:58)
-	at ✽.I generate fake details and make a Sign up using "walenbeg@ya.ru", password "ujdusfneiad3da-a3"(file:src/test/resources/features/SignUp.feature:7)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 65.173 sec

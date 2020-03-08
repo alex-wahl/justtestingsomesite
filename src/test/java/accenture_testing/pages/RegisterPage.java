@@ -1,5 +1,6 @@
 package accenture_testing.pages;
 
+import accenture_testing.backend.CaptchaHandle;
 import accenture_testing.backend.Request;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -99,7 +100,7 @@ public class RegisterPage {
     By careersBlog = By.name("chkSubscribeToCareerBlog");
 
     //By captha
-    By captha = By.className("captchaInput");
+    By captha = By.xpath("//*[@id=\"HoXhmae8wU2F9Fw0CLk8lQ_RegCCode\"]");
 
     //By register
     By register = By.xpath("//*[@id=\"btnRegister\"]");
