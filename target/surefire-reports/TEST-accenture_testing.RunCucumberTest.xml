@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="accenture_testing.RunCucumberTest" time="2.77" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="accenture_testing.RunCucumberTest" time="51.044" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="cucumber.options" value="--tags @SendCaptcha"/>
+    <property name="cucumber.options" value="--tags @SignUp"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.221-b11"/>
     <property name="gopherProxySet" value="false"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dcucumber.options=--tags @SendCaptcha"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dcucumber.options=--tags @SignUp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="de"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -65,5 +65,62 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Sending captcha to check it works" name="Sending captcha" time="2.77"/>
+  <testcase classname="SignUp on the Accenture web site" name="SignUp on the Accenture web site" time="51.044">
+    <error message="element not interactable
+  (Session info: chrome=80.0.3987.132)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Alexanders-MBP.home&apos;, ip: &apos;fe80:0:0:0:1c07:9230:4832:55b3%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.132, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/89/5trqvlnd3ng...}, goog:chromeOptions: {debuggerAddress: localhost:58530}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e53ee26f9cc8ad5b5b7229f45531b8b4" type="org.openqa.selenium.ElementNotInteractableException">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=80.0.3987.132)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Alexanders-MBP.home&apos;, ip: &apos;fe80:0:0:0:1c07:9230:4832:55b3%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.132, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/89/5trqvlnd3ng...}, goog:chromeOptions: {debuggerAddress: localhost:58530}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e53ee26f9cc8ad5b5b7229f45531b8b4
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at accenture_testing.pages.RegisterPage.typePassword(RegisterPage.java:144)
+	at accenture_testing.steps.Web.i_generate_fake_details_and_make_a_Sign_up_using_password(Web.java:58)
+	at ✽.I generate fake details and make a Sign up using &quot;walenbeg@ya.ru&quot;, password &quot;ujdusfneiad3da-a3&quot;(file:src/test/resources/features/SignUp.feature:7)
+</error>
+    <system-out>2020-03-08 16:01:40 INFO  Helper:22 - ############ Opening a browser Chrome ############
+2020-03-08 16:01:45 INFO  Helper:20 - Opened Link is: https://accenture.com
+2020-03-08 16:01:52 INFO  Helper:36 - Accept coockies
+2020-03-08 16:01:52 INFO  Helper:39 - Click on Sign In on the home page
+2020-03-08 16:01:52 INFO  HomePage:29 - Click on SignIn
+2020-03-08 16:01:54 INFO  Helper:42 - Click on Sign Up on the Sign Up page
+2020-03-08 16:01:54 INFO  SignInPage:29 - Click on Sign Up
+2020-03-08 16:01:56 INFO  Helper:45 - Scroll Down
+2020-03-08 16:01:58 INFO  Helper:54 - Type email
+2020-03-08 16:02:01 INFO  Helper:57 - Type password
+</system-out>
+    <system-err>Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 43196
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Mär 08, 2020 4:01:45 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMATION: Detected dialect: W3C
+[1583679707.015][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679707.200][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679707.319][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679708.424][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679709.126][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679709.282][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679709.390][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679709.496][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679713.704][SEVERE]: Timed out receiving message from renderer: 0.100
+[1583679713.805][SEVERE]: Timed out receiving message from renderer: 0.100
+</system-err>
+  </testcase>
 </testsuite>

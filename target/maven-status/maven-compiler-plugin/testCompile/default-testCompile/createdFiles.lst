@@ -7,4 +7,5 @@ accenture_testing/utilities/Crop.class
 accenture_testing/steps/Helper.class
 accenture_testing/backend/Request.class
 accenture_testing/pages/RegisterPage.class
+accenture_testing/backend/CaptchaHandle.class
 accenture_testing/steps/Stepdefs.class

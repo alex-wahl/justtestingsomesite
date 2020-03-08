@@ -1,5 +1,6 @@
 /Users/wahl/Desktop/testing/justtestingsomesite/src/test/java/accenture_testing/pages/HomePage.java
 /Users/wahl/Desktop/testing/justtestingsomesite/src/test/java/accenture_testing/pages/SignInPage.java
+/Users/wahl/Desktop/testing/justtestingsomesite/src/test/java/accenture_testing/backend/CaptchaHandle.java
 /Users/wahl/Desktop/testing/justtestingsomesite/src/test/java/accenture_testing/RunCucumberTest.java
 /Users/wahl/Desktop/testing/justtestingsomesite/src/test/java/accenture_testing/steps/DriverCreation.java
 /Users/wahl/Desktop/testing/justtestingsomesite/src/test/java/accenture_testing/steps/Helper.java
