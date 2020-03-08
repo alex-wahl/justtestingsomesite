@@ -1,5 +1,6 @@
 package accenture_testing.steps;
 
+import accenture_testing.backend.Request;
 import accenture_testing.pages.HomePage;
 import accenture_testing.pages.RegisterPage;
 import accenture_testing.pages.SignInPage;
@@ -157,5 +158,16 @@ public class Web extends Helper {
         }
 
     }
+
+    @Given("builder which I will send")
+    public void builderWhichIWillSend() {
+
+        logger.info("Send beckend request");
+
+            Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png");
+
+
+    }
+
 
 }
