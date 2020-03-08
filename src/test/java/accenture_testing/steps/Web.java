@@ -165,10 +165,7 @@ public class Web extends Helper {
 
         logger.info("Checking status");
         String status = Request.statusCaptcha(id).asString();
-        //CaptchaHandle getnew = new CaptchaHandle();
-        //getnew.getCaptcha(status);
         CaptchaHandle.getCaptcha(status);
-
 
         logger.info("Captcha ID == " +  id);
         logger.info("Captcha value == " +  captchavalue);

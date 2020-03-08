@@ -22,11 +22,6 @@ public class CaptchaHandle extends Helper {
             clearArray.addAll(Arrays.asList(str.split("&")));
         }
 
-        logger.info("clearArray 4 " + clearArray.get(4));
-        logger.info("clearArray 3 " + clearArray.get(3));
-        logger.info("clearArray 5 " + clearArray.get(5));
-        logger.info("clearArray 6 " + clearArray.get(6));
-
         captchavalue = clearArray.get(5);
         id = clearArray.get(3);
 
