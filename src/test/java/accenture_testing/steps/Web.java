@@ -176,6 +176,12 @@ public class Web extends Helper {
         logger.info("Make register");
         registerPage.clickOnRegister();
 
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            //
+        }
+
     }
 
     @Given("builder which I will send")
