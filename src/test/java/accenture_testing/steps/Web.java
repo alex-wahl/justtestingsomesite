@@ -151,6 +151,9 @@ public class Web extends Helper {
         logger.info("Make crop");
         registerPage.makeCrop();
 
+        logger.info("Send beckend request");
+        Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png");
+
         try {
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -163,9 +166,7 @@ public class Web extends Helper {
     public void builderWhichIWillSend() {
 
         logger.info("Send beckend request");
-
-            Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png");
-
+        Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png");
 
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="accenture_testing.RunCucumberTest" time="2.709" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="accenture_testing.RunCucumberTest" time="2.77" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="cucumber.options" value="--tags @SendCaptcha"/>
@@ -65,5 +65,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Sending captcha to check it works" name="Sending captcha" time="2.709"/>
+  <testcase classname="Sending captcha to check it works" name="Sending captcha" time="2.77"/>
 </testsuite>
