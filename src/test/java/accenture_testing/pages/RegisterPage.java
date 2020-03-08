@@ -1,5 +1,7 @@
 package accenture_testing.pages;
 
+import accenture_testing.backend.CaptchaHandle;
+import accenture_testing.backend.Request;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
@@ -11,6 +13,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
+
+import static accenture_testing.backend.CaptchaHandle.captchavalue;
 
 public class RegisterPage {
 
@@ -96,7 +100,10 @@ public class RegisterPage {
     By careersBlog = By.name("chkSubscribeToCareerBlog");
 
     //By captha
-    By captha = By.className("captchaInput");
+    By captha = By.xpath("/html/body/div[1]/div[6]/section/div[1]/div/section/div/div/form/div[9]/section/div[2]/div[2]/div[3]/div[1]/div/input");
+
+    //By register
+    By register = By.xpath("//*[@id=\"btnRegister\"]");
 
     // By coockies
     By coockies = By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]");
@@ -317,6 +324,17 @@ public class RegisterPage {
         BufferedImage bufferedImage = ImageIO.read(imageFile);
         BufferedImage croppedScreen = Crop.cropImage(bufferedImage, 750, 1165, 700, 160);
         ImageIO.write(croppedScreen, "png", new File(cropped));
+
+    }
+
+    public void typeCaptcha() {
+
+        driver.findElement(captha).sendKeys(captchavalue);
+    }
+
+    public void clickOnRegister() {
+
+        driver.findElement(register).click();
 
     }
 

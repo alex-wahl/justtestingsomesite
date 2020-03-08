@@ -1,15 +1,16 @@
 package accenture_testing.steps;
 
+import accenture_testing.backend.CaptchaHandle;
+import accenture_testing.backend.Request;
 import accenture_testing.pages.HomePage;
 import accenture_testing.pages.RegisterPage;
 import accenture_testing.pages.SignInPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+
+import static accenture_testing.backend.CaptchaHandle.*;
 
 public class Web extends Helper {
 
@@ -150,12 +151,47 @@ public class Web extends Helper {
         logger.info("Make crop");
         registerPage.makeCrop();
 
+        logger.info("Send backend request");
+        String responseCaptcha = Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png").asString();
+
         try {
-            Thread.sleep(5000);
+            Thread.sleep(15000);
+        } catch (Exception e) {
+            //
+        }
+
+        logger.info("Captcha handling");
+        CaptchaHandle.getCaptcha(responseCaptcha);
+
+        logger.info("Checking status");
+        String status = Request.statusCaptcha(id).asString();
+        CaptchaHandle.getCaptcha(status);
+
+        logger.info("Captcha ID == " +  id);
+        logger.info("Captcha value == " +  captchavalue);
+
+        logger.info("Type captcha");
+        registerPage.typeCaptcha();
+
+        logger.info("Make register");
+        registerPage.clickOnRegister();
+
+        try {
+            Thread.sleep(2000);
         } catch (Exception e) {
             //
         }
 
     }
+
+    @Given("builder which I will send")
+    public void builderWhichIWillSend() {
+
+        //logger.info("Send beckend request");
+        Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png");
+        logger.info("Check status");
+
+    }
+
 
 }
