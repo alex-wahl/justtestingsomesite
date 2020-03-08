@@ -100,7 +100,7 @@ public class RegisterPage {
     By careersBlog = By.name("chkSubscribeToCareerBlog");
 
     //By captha
-    By captha = By.xpath("//*[@id=\"HoXhmae8wU2F9Fw0CLk8lQ_RegCCode\"]");
+    By captha = By.xpath("/html/body/div[1]/div[6]/section/div[1]/div/section/div/div/form/div[9]/section/div[2]/div[2]/div[3]/div[1]/div/input");
 
     //By register
     By register = By.xpath("//*[@id=\"btnRegister\"]");

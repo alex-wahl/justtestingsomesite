@@ -155,7 +155,7 @@ public class Web extends Helper {
         String responseCaptcha = Request.sendCaptcha("/Users/wahl/Desktop/testing/justtestingsomesite/cropped.png").asString();
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(15000);
         } catch (Exception e) {
             //
         }
